@@ -10,31 +10,22 @@
 // @copyright 2018, Alistair1231 (https://openuserjs.org/users/Alistair1231)
 // ==/UserScript==
 
-
 // ==OpenUserJS==
 // @author Alistair1231
 // ==/OpenUserJS==
 
-// a function that loads jQuery and calls a callback function when jQuery has finished loading
-function addJQuery(callback) {
-  var script = document.createElement("script");
-  script.setAttribute("src", "//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js");
-  script.addEventListener('load', function() {
-    var script = document.createElement("script");
-    script.textContent = "window.jQ=jQuery.noConflict(true);(" + callback.toString() + ")();";
-    document.body.appendChild(script);
-  }, false);
-  document.body.appendChild(script);
-}
-addJQuery(main);
+// now without jquery
+(function () {
+  function getElementByXpath (path) {
+    return document.evaluate(
+      path,
+      document,
+      null,
+      XPathResult.FIRST_ORDERED_NODE_TYPE,
+      null
+    ).singleNodeValue
+  }
 
-function main(){
-jQ( document ).ready
-(
-	setTimeout(function()
-	{
-		jQ('label[onclick*="shorturlon()"]').click();
-        jQ('label[for="r3"]').click();
-        jQ('input[class="urlbox"]').select();
-	},200)
-)();}
+  getElementByXpath('//*[@id="r3"]').click()
+  getElementByXpath('/html/body/div[1]/div[2]/form/div[2]/input').select()
+})();
