@@ -1,13 +1,13 @@
 // ==UserScript==
 // @name         is.gd auto pronouncable
 // @namespace    https://github.com/Alistair1231/
-// @version      0.1
+// @version      2
 // @description  auto selects 'lowercase pronouncable'
 // @author       Alistair1231
 // @match        https://is.gd/
 // @grant        none
 // @license GPL-3.0
-// @copyright 2018, Alistair1231 (https://openuserjs.org/users/Alistair1231)
+// @copyright 2020, Alistair1231 (https://openuserjs.org/users/Alistair1231)
 // ==/UserScript==
 
 // ==OpenUserJS==
